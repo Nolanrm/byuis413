@@ -1,0 +1,45 @@
+<%inherit file="app_base.html" />
+
+<%block name ="Header">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-8 ">
+                <h1>Contact Us<h1>
+            </div>
+        </div>
+    </div>
+</%block>
+
+        <%block name="content">
+                     <form action="/homepage/contact" method="POST">
+                        ${ csrf_input}
+                        First name:<br>
+                        <input type="text" name="firstname"><br>
+                        Last name:<br>
+                        <input type="text" name="lastname">
+                        <input type="submit" value="Submit">
+                      </form>      
+     
+                         
+        </%block>
+        <%block name="left">
+       
+    </%block>
+
+    <%block name="center">
+        
+    </%block>
+ 
+    <%block name="right">
+        
+    </%block>
+
+
+
+
+
+      
+
+
+
+

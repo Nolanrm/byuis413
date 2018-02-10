@@ -1,0 +1,61 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+
+        <title>Nolan Maddy</title>
+
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="${STATIC_URL}homepage/media/js/bootstrap.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="${STATIC_URL}homepage/media/css/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="${STATIC_URL}homepage/media/css/bootstrap.css">
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+
+    </head>
+    <body>
+        <div style="background-color:red">
+            <h1 class="text-center" style="color:white"> Current Sight Under Maintaince </h1>
+        </div>
+
+        <header> 
+        <%block name ="Menu">
+                <!-- Menu is inherited from app_base.html-->
+        </%block>
+
+      
+           <%block name="Header">
+                header goes here
+           </%block>
+        </header>
+
+        <main>
+            <%block name="content">
+                Site content goes here in sub-templates.
+            </%block>
+
+        <%block name="left">
+            Site content goes here in sub-templates.
+        </%block>
+
+        <%block name="center">
+            Site content goes here in sub-templates.
+        </%block>
+     
+        <%block name="right">
+            Site content goes here in sub-templates.
+        </%block>
+
+        </main>
+        <footer class="modal-footer">
+            <%block name="Footer">
+                Site footer goes here
+            </%block>
+        </footer>
+    </body>
+</html>
