@@ -1,0 +1,11 @@
+<%inherit file="homepage/templates/base.htm" />
+
+<%block name = "content">
+
+    <form action='/account/testform/' method = 'POST'>
+        ${ csrf_input}
+        <h1> ${ request.user.is_authenticated }</h1>
+        ${form.as_p()}
+        <input type="submit" value="Submit">
+    </form>
+</%block>

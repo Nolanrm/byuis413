@@ -1,0 +1,75 @@
+- model: contenttypes.contenttype
+  pk: 1020
+  fields: {app_label: fomo_account, model: logentry}
+
+- model: auth.permission
+  pk: 1000
+  fields: {name: Can delete product, content_type: 7, codename: delete_product}
+
+
+- model: auth.permission
+  pk: 1001
+  fields: {name: Can discount price, content_type: 7, codename: discount_price}
+
+- model: auth.permission
+  pk: 1002
+  fields: {name: Can add product, content_type: 7, codename: add_product}
+
+- model: auth.group
+  pk: 1030
+  fields:
+    name: Customer Support
+    permissions: [16, 17, 18, 1]
+
+- model: auth.group
+  pk: 1004
+  fields:
+    name: Sales Person
+    permissions: [1, 2, 3, 4]
+
+- model: auth.group
+  pk: 1005
+  fields:
+    name: Tehc Support
+    permissions: [5, 6, 7, 8]
+
+- model: account.user
+  pk: 1050
+  fields:
+    password: pbkdf2_sha256$100000$aIMAmGd7V4kA$FHRVbouhtV9fDCk9dTkn1e6PwpqIrWwOw2FCEMzn87o=
+    last_login: 2018-01-31 18:33:44.955764+00:00
+    is_superuser: true
+    email: nolan@maddy.com
+    first_name: Nolan
+    last_name: Maddy
+    is_staff: true
+    is_active: true
+    date_joined: 2018-01-31 18:30:15.767309+00:00
+    bithdate: null
+    address: null
+    city: Cincinnati
+    state: CA
+    zipcode: 45011
+    groups: []
+    user_permissions: []
+
+- model: account.user
+  pk: 1010
+  fields:
+    password: pbkdf2_sha256$100000$aIMAmGd7V4kA$FHRVbouhtV9fDCk9dTkn1e6PwpqIrWwOw2FCEMzn87o=
+    last_login: 2018-01-31 18:33:44.955764+00:00
+    is_superuser: false
+    email: paige@maddy.com
+    first_name: Paige
+    last_name: Maddy
+    is_staff: true
+    is_active: true
+    date_joined: 2018-01-31 18:30:15.767309+00:00
+    bithdate: null
+    address: 233 b bakers st.
+    city: Cincinnati
+    state: OH
+    zipcode: 12345
+    groups: []
+    user_permissions: []
+
