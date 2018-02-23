@@ -57,7 +57,7 @@ class SignUpForm(Formless):
             elif not re.search("[0-9]",p1):
                 raise forms.ValidationError('Password must contain a number')
             else:
-                print("Valid Password")
+                #print("Valid Password")
                 x=False
                 break
 
