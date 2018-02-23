@@ -1,0 +1,139 @@
+<%inherit file="catalog_base.html" />
+
+<%inherit file="homepage/templates/base.htm" />
+
+<%block name = "Menu">
+<nav class="navbar navbar-toggleable-md navbar-default bg-faded">
+    <div class="row">
+
+    <div class="col-sm-1">
+        <img src="${STATIC_URL}homepage/media/pokeball.png" height="30px" width="30px">
+    </div>
+    <div class="col-sm-1">
+        <a class="navbar-brand" href="/homepage/index"> FOMO</a>
+    </div>
+    <div class="col-sm-10">
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"  style="list-style-type:none; margin-top:10px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'index' else ''}" style="margin-right:20px">
+              <a class="nav-link " href="/homepage/index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="btn btn-primary ${ 'myActive' if request.dmp_router_page == 'productlist' else ''}" style="margin-right:20px">
+              <a class="nav-link  " href="/catalog/productlist">Product List</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'terms' else ''}" style="margin-right:20px">
+              <a class="nav-link disabled" href="/homepage/terms">Terms</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'contact' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/contact">Contact</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'faq' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/faq">FAQ</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'about' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/about">About</a>
+            </li>
+          
+            <li>
+                    <h1>  Welcome ${  request.user.first_name if request.user.is_authenticated else ''}</h1>
+               </li>
+        <li >
+          <div class="dropdown nav-btn-left">
+          <button class=" dropbtn btn-right nav-btn-left btn btn-primary" :hover style="list-style-type:none"> Account &#x25BD;
+            </button>
+                <dvi class='dropdown-content'>
+                ${  "<a href=""/account/logout""> Logout</a>" if request.user.is_authenticated else ''}
+                  <a href='/account/sign_up'>Sign Up</a>
+                
+                  <a href="/account/login">Login</a> 
+                
+                      
+                  
+                </dvi>
+             </div>     
+          </li>
+         
+              </ul>
+          
+        </div>
+      </div>
+      </div>
+
+  </nav>
+</%block>
+<footer>
+<%block name = "Footer">
+    <p> &copy; Copyright | 
+        <%from datetime import datetime%>
+            ${datetime.now().year} | All rights reserved.
+    </p>
+</%block>
+</footer>
+
+<%block name = "Header">
+
+            <h1>Active Products</h1>
+
+</%block>
+
+<%block name = "content">
+
+<div>
+    <container>
+        <row>
+            <a class="btn btn-primary" href='/manager/create'>Create New Product</a>
+        </row>
+    </container>
+</div>
+
+<table>
+    <th>Name</th>
+    <th>Product Type</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Customize</th>
+    
+    % for p in p1:
+
+    <tr>
+        <td>
+            ${ p.name }
+        </td>
+        <td>
+            ${ p.__class__.__name__}
+        </td>
+        <td>
+          $  ${ p.price}
+        </td>
+        <td>
+            ${ p.category}
+        </td>
+        <td>
+            % if p.__class__.__name__=="BulkProduct":
+                ${p.quantity}
+            % else:
+                1
+            % endif
+        </td>
+        <td>
+            <a href='/manager/edit/${p.id}'>edit</a> |
+            <a href='/catalog/productlist/${p.id}'>delete</a>
+        </td>
+    </tr>
+    % endfor
+</table> 
+</%block>
+
+<%block name="left">
+      
+</%block>
+
+<%block name="center">
+
+</%block>
+
+<%block name="right">
+
+</%block>
