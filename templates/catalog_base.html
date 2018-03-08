@@ -1,0 +1,62 @@
+<%inherit file="homepage/templates/base.htm" />
+
+<%block name = "Menu">
+<nav class="navbar navbar-toggleable-md navbar-default bg-faded">
+    <div class="row">
+
+    <div class="col-sm-1">
+        <img src="${STATIC_URL}homepage/media/pokeball.png" height="30px" width="30px">
+    </div>
+    <div class="col-sm-1">
+        <a class="navbar-brand" href="/homepage/index"> FOMO</a>
+    </div>
+    <div class="col-sm-10">
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"  style="list-style-type:none; margin-top:10px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'index' else ''}" style="margin-right:20px">
+              <a class="nav-link " href="/catalog/index/0/1">Catalog <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="btn btn-primary ${ 'myActive' if request.dmp.page == 'productlist' else ''}" style="margin-right:20px">
+              <a class="nav-link  " href="/catalog/productlist">Product List</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'terms' else ''}" style="margin-right:20px">
+              <a class="nav-link disabled" href="/homepage/terms">Terms</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'contact' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/contact">Contact</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'faq' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/faq">FAQ</a>
+            </li>
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'about' else ''}" style="margin-right:20px">
+                <a class="nav-link disabled" href="/homepage/about">About</a>
+            </li>
+          
+            <li>
+                    <h1>  Welcome ${  request.user.first_name if request.user.is_authenticated else ''}</h1>
+               </li>
+        <li >
+          <div class="dropdown nav-btn-left">
+          <button class=" dropbtn btn-right nav-btn-left btn btn-primary" :hover style="list-style-type:none"> Account &#x25BD;
+            </button>
+                <dvi class='dropdown-content'>
+                ${  "<a href=""/account/logout""> Logout</a>" if request.user.is_authenticated else ''}
+                  <a href='/account/sign_up'>Sign Up</a>
+                
+                  <a href="/account/login">Login</a> 
+                
+                      
+                  
+                </dvi>
+             </div>     
+          </li>
+         
+              </ul>
+          
+        </div>
+      </div>
+      </div>
+
+  </nav>
+</%block>

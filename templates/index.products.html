@@ -1,0 +1,28 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+
+<%block name="content">
+
+<div id="page_count">
+                <a class="btn btn-primary" id='left_arrow' onclick="page_down(${pnum}, ${page_count}, ${request.dmp.urlparams[0]})">&laquo;</a> page
+                <a id='pnum'> ${pnum} </a> of ${page_count} 
+                <a class="btn btn-primary" id="right_arrow"onclick="page_up(${pnum}, ${page_count}, ${request.dmp.urlparams[0]})"> &raquo;</a>
+</div>
+<ul id="product_list">
+    % for q in qry:
+        
+            <li class="product_tile">
+               <img class="image"  src=' ${q.image_url()}'>
+               <div class="price">$ ${q.price}</div>
+               <div class="name">${q.name}</div>
+               <div class="category">(${q.category})</div>
+            </li>
+            
+
+    % endfor
+        </ul>
+</%block>
+
+
+
+
+

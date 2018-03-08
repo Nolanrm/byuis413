@@ -1,0 +1,56 @@
+#product_list{
+    display: block;
+
+
+    list-style: none;
+    margin: 0px;
+    padding: 0px; 
+
+}
+.product_tile{
+    display: inline-block;
+    position: relative;
+
+    margin: 50px 100px;
+    border:2px solid #cccccc;
+    padding: 12px;
+    border-radius: 4px;
+    
+}
+
+.product_tile .image{
+    width: 130px;
+    height: 130px;
+}
+
+
+.product_tile > .price{
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+
+}
+
+.product_tile > .name{
+    position: absolute;
+    left: 30%;
+    bottom: -30px;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+}
+.product_tile > .category{
+    position: absolute;
+    font-size: 11px;
+    left: 0px;
+    top: -30px;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+
