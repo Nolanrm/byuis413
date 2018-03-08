@@ -1,0 +1,13 @@
+#icon{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+li{
+    margin-right: 20px;
+}
+
+#skip{
+    color: blue;
+}

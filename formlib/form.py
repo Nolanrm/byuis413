@@ -33,7 +33,7 @@ d = form.commit(c=3)
 return HttpResponseRedirect('/app/successurl/')
 
 # render the template
-return request.dmp_render('mytemplate.html', {
+return request.dmp.render('mytemplate.html', {
 'form': form,
 })
 

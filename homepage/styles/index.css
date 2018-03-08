@@ -1,3 +1,37 @@
-h4.utc-time {
-    color: #AA3333;
+#Header {
+    height: 275px;
+    position: relative;
+    font-weight: bold;
+    background-color:lightgray;
+
+}
+
+#btn_shop_now {
+    background-color: orange;
+    border-color: darkorange;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+#btn_shop_now:hover {
+    background-color: lightgoldenrodyellow;
+    color: darkorange;
+    border-color: orange;
+}
+
+.ImageSize{
+    height: 275px;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    margin:auto;
+    width: 100%; 
+    }
+.navbar{
+    margin-bottom: 0;
 }

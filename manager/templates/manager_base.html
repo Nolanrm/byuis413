@@ -14,12 +14,12 @@
   
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto"  style="list-style-type:none; margin-top:10px">
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'index' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'index' else ''}" style="margin-right:20px">
               <a class="nav-link " href="/homepage/index">Home <span class="sr-only">(current)</span></a>
             </li>
             
           
-            <li class="btn btn-primary ${ 'myActive' if request.dmp_router_page == 'productlist' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary ${ 'myActive' if request.dmp.page == 'productlist' else ''}" style="margin-right:20px">
                     <a class="nav-link  " href="/catalog/productlist">Back to Product List</a>
                   </li>
         <li >

@@ -19,7 +19,7 @@ def process_request(request):
 
         return HttpResponseRedirect('/catalog/productlist')
 
-    return request.dmp_render('create.html', {'form':form,})
+    return request.dmp.render('create.html', {'form':form,})
 
 class CreateForm(Formless):
     

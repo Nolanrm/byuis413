@@ -1,10 +1,46 @@
 <%inherit file="app_base.html" />
 
 <%block name ="Header">
-    <div class="row">
-        <div class="container">
-            <div class="col-md-8 ">
-                <h1>Header<h1>
+    <div  class="row">
+        <div id="Header" class="container">
+            <div class="col-md-6 text-center">
+                <h2><strong>Music is our Passion</strong></h2>
+                <a id="btn_shop_now" class="btn btn-primary" href='/catalog/index/0/1'>Shop Now<a>                   
+            </div>
+            <div class="col-md-6">
+                    <div id="myCarousel" class="ImageSize carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                          
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner ImageSize">
+                              <div class="item active ImageSize">
+                                <img src="${STATIC_URL}homepage/media/PianoPlaying.jpg" alt="Piano Player">
+                              </div>
+                          
+                              <div class="item ImageSize">
+                                <img src="${STATIC_URL}homepage/media/SaxophonePlaying.jpg" alt="Saxophone Player">
+                              </div>
+                          
+                              <div class="item">
+                                <img src="${STATIC_URL}homepage/media/GuitarPlaying.jpg" alt="Guitar Player">
+                              </div>
+                            </div>
+                          
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-chevron-right"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
             </div>
         </div>
     </div>
@@ -12,18 +48,18 @@
 
         <%block name="content">
             <div class="Row">
-                <div class="container text-center">
-                     <h1>   Stuff above the columns</h1>
+                <div class="container ">
+                     <h1>   Family-Oriented Music Orgainzation</h1>
                 </div>
             </div>
         </%block>
 
 
         <%block name="left">
-        <div class="row">
+        <div id="maincontent" class="row">
                 <div class="container">
-                    <div class="col-md-4">
-                            <p class="text-center"><strong> Left</strong></p>
+                    
+                            <p class="text-center"><h3> Rentals</h3></p>
                             sit amet lacinia lorem tristique. Aenean rhoncus viverra elit, ac varius risus molestie sed.
                             Pellentesque molestie ullamcorper gravida. 
                             Suspendisse aliquet purus eu aliquam bibendum. 
@@ -37,12 +73,12 @@
                              Vestibulum pulvinar quis diam vitae facilisis. Sed suscipit 
                              lacinia pellentesque. Maecenas iaculis consequat sollicitudin. 
                              Sed hendrerit eget turpis sed placerat. Nulla nec arcu
-                    </div>
+                   
         </%block>
 
         <%block name="center"> 
-                    <div class="col-md-4">
-                            <p class="text-center"><strong> Center</strong></p>
+       
+                            <p class="text-center"><h3> Products</h3></p>
                             <p class = "text-justify ">
                                     Pellentesque molestie ullamcorper gravida. 
                                     Suspendisse aliquet purus eu aliquam bibendum. 
@@ -73,11 +109,11 @@
                                         pharetra venenatis et a dolor. Pellentesque scelerisque nisi eu nunc finibus, 
                                         sit amet lacinia lorem tristique. Aenean rhoncus viverra elit, ac varius risus molestie sed.
                             </p>
-                    </div>
+ 
         </%block>
         <%block name="right">
-            <div class="col-md-4">
-                    <p class="text-center"><strong> Right </strong></p>
+        
+                    <p class="text-center"><h3> Lessons </h3></p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                          Cras suscipit ullamcorper diam a consectetur. Nullam faucibus malesuada orci, 
                          non lacinia odio sagittis et. Donec vitae ipsum quis turpis consequat feugiat.
@@ -86,7 +122,7 @@
                           eget pharetra justo sem nec sem. Aenean nec convallis odio, eu pellentesque tellus. 
                           Integer arcu eros, fermentum at ultrices in, ultricies at elit. Fusce convallis mi vitae magna 
                           hendrerit condimentum. Donec id magna maximus, fermentum nunc quis, interdum libero. </p>
-            </div>
+    
         </div>
     </div>
     

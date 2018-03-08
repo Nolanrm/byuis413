@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect
 def process_request(request):
 
     #pulling id from url, given from the catalog/productlist.html page
-    p1 = cmod.Product.objects.get(id=request.urlparams[0])
+    p1 = cmod.Product.objects.get(id=request.dmp.urlparams[0])
     if p1.__class__.__name__ == 'BulkProduct':
         form = EditForm(request, initial= {
             'TYPE_CHOICES': 1,
@@ -62,7 +62,7 @@ def process_request(request):
         'form':form,
     }
 
-    return request.dmp_render('edit.html', product)
+    return request.dmp.render('edit.html', product)
 
 class EditForm(Formless):
     
@@ -140,7 +140,7 @@ class EditForm(Formless):
     def commit(self, request):
 
         if self.cleaned_data.get('TYPE_CHOICES') == '1':
-            p1 = cmod.Product.objects.get(id=request.urlparams[0])  
+            p1 = cmod.Product.objects.get(id=request.dmp.urlparams[0])  
 
             p1.status = self.cleaned_data.get('status')
             p1.name = self.cleaned_data.get('name')
@@ -155,7 +155,7 @@ class EditForm(Formless):
             p1.save()
 
         elif self.cleaned_data.get('TYPE_CHOICES') == '2':
-            p1 = cmod.Product.objects.get(id=request.urlparams[0])
+            p1 = cmod.Product.objects.get(id=request.dmp.urlparams[0])
 
             p1.status = self.cleaned_data.get('status')
             p1.name = self.cleaned_data.get('name')
@@ -168,7 +168,7 @@ class EditForm(Formless):
             p1.save()
         
         elif self.cleaned_data.get('TYPE_CHOICES') == '3':
-            p1 = cmod.Product.objects.get(id=request.urlparams[0])
+            p1 = cmod.Product.objects.get(id=request.dmp.urlparams[0])
 
             p1.status = self.cleaned_data.get('status')
             p1.name = self.cleaned_data.get('name')
