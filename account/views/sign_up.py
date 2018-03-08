@@ -21,7 +21,7 @@ def process_request(request):
             #create the user
         return HttpResponseRedirect('/account/index/')
 
-    return request.dmp_render('sign_up.html', {'form':form,})
+    return request.dmp.render('sign_up.html', {'form':form,})
 
 class SignUpForm(Formless):
 

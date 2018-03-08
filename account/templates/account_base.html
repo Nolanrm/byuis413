@@ -14,25 +14,25 @@
   
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto"  style="list-style-type:none; margin-top:10px">
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'index' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'index' else ''}" style="margin-right:20px">
               <a class="nav-link " href="/homepage/index">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="btn btn-primary ${ 'myActive' if request.dmp_router_page == 'sections' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary ${ 'myActive' if request.dmp.page == 'sections' else ''}" style="margin-right:20px">
               <a class="nav-link  " href="/homepage/sections">Sections</a>
             </li>
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'terms' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'terms' else ''}" style="margin-right:20px">
               <a class="nav-link disabled" href="/homepage/terms">Terms</a>
             </li>
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'contact' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'contact' else ''}" style="margin-right:20px">
                 <a class="nav-link disabled" href="/homepage/contact">Contact</a>
             </li>
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'faq' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'faq' else ''}" style="margin-right:20px">
                 <a class="nav-link disabled" href="/homepage/faq">FAQ</a>
             </li>
-            <li class="btn btn-primary  ${ 'myActive' if request.dmp_router_page == 'about' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary  ${ 'myActive' if request.dmp.page == 'about' else ''}" style="margin-right:20px">
                 <a class="nav-link disabled" href="/homepage/about">About</a>
             </li>
-            <li class="btn btn-primary ${ 'myActive' if request.dmp_router_page == 'productlist' else ''}" style="margin-right:20px">
+            <li class="btn btn-primary ${ 'myActive' if request.dmp.page == 'productlist' else ''}" style="margin-right:20px">
                     <a class="nav-link  " href="/catalog/productlist">Product List</a>
             </li>
           
