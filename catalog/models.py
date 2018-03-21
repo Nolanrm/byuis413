@@ -1,5 +1,6 @@
 from django.db import models
 from polymorphic.models import PolymorphicModel
+from FOMO import settings
 
 class Category(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
@@ -29,6 +30,32 @@ class Product(PolymorphicModel):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=7,decimal_places=2)
 
+    def image_url(self):
+        image = ProductImage.objects.filter(product = self)
+        try:
+            url = settings.STATIC_URL + 'catalog/media/products/' + image[0].filename
+        except:
+            url = settings.STATIC_URL + 'catalog/media/products/no_image.png'
+
+        return url
+
+    def image_urls(self):
+        image = ProductImage.objects.filter(product = self)
+        mylist=[]
+
+        #for each item in list
+        try:
+            for i1 in image:
+                url = settings.STATIC_URL + 'catalog/media/products/' + i1.filename
+                mylist.append([url])                
+        except:
+            url = settings.STATIC_URL + 'catalog/media/products/no_image.png'
+            mylist.append([url])
+
+        return mylist
+
+    
+
 class BulkProduct(Product):
     TITLE = 'Bulk'
     quantity = models.IntegerField()
@@ -45,3 +72,12 @@ class RentalProduct(Product):
     max_rental_days = models.IntegerField(default=0)
     retire_date = models.DateField(null=True,blank=True)
 
+class ProductImage(models.Model):
+    filename = models.TextField()
+    create_date = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now =True)
+    product = models.ForeignKey('Product', on_delete = models.CASCADE,related_name='images')
+
+
+
+## empy NOT_FOUND_PRODUCT_IMAGE = ProductImage()

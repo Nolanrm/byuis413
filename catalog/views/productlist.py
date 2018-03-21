@@ -8,9 +8,9 @@ from django_mako_plus import view_function, jscontext
 def process_request(request):
 
 
-    if request.urlparams[0] != '':
+    if request.dmp.urlparams[0] != '':
         #need to add try except incase an invalid number is put in the url
-           p2 = cmod.Product.objects.get(id=request.urlparams[0])
+           p2 = cmod.Product.objects.get(id=request.dmp.urlparams[0])
            p2.status = 'I'
            p2.save()
 
@@ -21,4 +21,4 @@ def process_request(request):
         }
     
 
-    return request.dmp_render('productlist.html', products)
+    return request.dmp.render('productlist.html', products)

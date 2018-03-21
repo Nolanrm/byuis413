@@ -13,3 +13,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.btn-padding{
+    margin-bottom: 20px;
+}

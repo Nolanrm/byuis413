@@ -1,0 +1,57 @@
+<%inherit file="catalog_base.html" />
+
+
+
+<%block name="content">
+
+<ul id='thumbnail_list'>
+% for pic in p.image_urls():
+     <li> <img class="thumbnail" src="${pic[0]}" alt="Thumb Nail Product Image"></li>
+% endfor
+</ul >
+<ul id='product_list'>
+<li class="text-center"><h1>${p.name}</h1></li>
+<li><img class="main_image" src="${p.image_url()}" alt="Main Product Image"></li>
+
+<li class="text-right"><h4>$${p.price}</h4></li>
+</ul>
+
+<div  class="details" id="product_details">
+    <h3>Details</h3>
+
+    This ${p.__class__.__name__} is avaliable.
+    Pellentesque molestie ullamcorper gravida. 
+    Suspendisse aliquet purus eu aliquam bibendum. 
+    Vestibulum pulvinar quis diam vitae facilisis. Sed suscipit 
+    lacinia pellentesque. Maecenas iaculis consequat sollicitudin. 
+    Sed hendrerit eget turpis sed placerat. Nulla nec arcu eleifend urna
+     pharetra venenatis et a dolor.
+</div>
+
+</%block>
+
+<%block name="right">
+
+
+</%block>
+<%block name="center">
+
+</%block>
+<%block name="left">
+ 
+<div id='quantity'>
+ <a class="btn btn-primary buy_now"> Buy Now</a>
+ % if p.__class__.__name__ == "BulkProduct":
+       <strong> Quantity</strong>
+        <input id='input' type="number">
+ % else:
+
+ % endif
+</div>
+</%block>
+
+<%block name="Footer">
+
+
+
+</%block>
